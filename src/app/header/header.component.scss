@@ -1,0 +1,58 @@
+@use "base" as *;
+@use "themes/classic" as *;
+
+$header-padding-bottom: $padding-size * .5;
+$nav-height-padding: .5rem;
+$a-font-size: $font-size;
+
+@function header-height() {
+    @return (($a-font-size * $line-height) + ($nav-height-padding * 2)) + $logo-size + ($heading1-height + $header-padding-bottom);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding-bottom: $header-padding-bottom;
+  background-color: $base-color;
+
+  .site-logo {
+    margin: 0 auto;
+    display: block;
+    width: $logo-size;
+    height: $logo-size;
+  }
+
+  .title-wrapper {
+    text-align: center;
+  }
+}
+
+nav {
+  color: $base-color;
+  background-color: $sub-color;
+
+  > ul {
+    display: flex;
+
+    li {
+      width: 100%;
+      text-align: center;
+
+      a {
+        display: inline-block;
+        padding: $nav-height-padding 0;
+        width: 100%;
+        height: inherit;
+        font-size: $a-font-size;
+        color: $base-color;
+
+        &:hover{
+          background-color: $main-color;
+        }
+      }
+    }
+  }
+}

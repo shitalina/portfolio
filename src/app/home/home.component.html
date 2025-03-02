@@ -1,0 +1,83 @@
+<app-main>
+  <section>
+    <img
+      src="/imgs/main-img.jpg"
+      alt="ロリィタ服の女性が庭園で紅茶を飲んでいるページのメイン画像"
+    />
+  </section>
+  <section class="scroll-wrapper">
+    <ul class="slider">
+      <li>
+        <figure>
+          <img src="/imgs/slide/lolita.jpg" />
+          <figcaption>ロリィタ</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="/imgs/slide/lolita2.jpg" />
+          <figcaption>ロリィタファッション</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="/imgs/slide/headdress.jpg" />
+          <figcaption>ヘッドレス</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="/imgs/slide/bonnet.jpg" />
+          <figcaption>ボンネット</figcaption>
+        </figure>
+      </li>
+      <li>
+        <figure>
+          <img src="/imgs/slide/pannier.jpg" />
+          <figcaption>パニエ</figcaption>
+        </figure>
+      </li>
+    </ul>
+  </section>
+  <div class="main-wrapper">
+    <app-content-section [title]="'ロリィタについて'">
+      <p>
+        19世紀ヨーロッパの貴族文化やヴィクトリアン時代、ロココ時代の服装をモチーフにした日本発祥のファッションスタイルです。<br />
+        フリルやレース、リボンなどの装飾がふんだんに使われた華やかなデザインが特徴で、<br />
+        少女のような可愛らしさやクラシカルな雰囲気を表現することが目的とされています。<br />
+      </p>
+    </app-content-section>
+    <app-content-section [title]="'特徴'">
+      <ul>
+        <li>
+          たくさんの<i>フリル</i>や<i>レース</i>を使用したお洋服や飾りもの
+        </li>
+        <li><i>パニエ</i>を使用してスカートを膨らませる</li>
+        <li>膝が隠れるくらいの丈</li>
+        <li><i>ヘッドドレス</i>や<i>ボンネット</i>などの頭飾り</li>
+      </ul>
+    </app-content-section>
+    <app-content-section [title]="'ブランドの種類'">
+      <ul>
+        <li *ngFor="let category of categories">
+          <h3>{{ category.name }}</h3>
+          <ul class="category-list_ul">
+            <li *ngFor="let brand of category.brands">
+              <a
+                href="{{ brand.url }}"
+                title="{{ brand.name }}の公式サイト"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src="{{ brand.img }}" alt="{{ brand.name }}の偽ロゴ" />
+              </a>
+              <p>
+                {{ brand.description }}
+              </p>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </app-content-section>
+  </div>
+</app-main>

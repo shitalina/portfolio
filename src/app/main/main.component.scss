@@ -1,0 +1,8 @@
+@use "base" as *;
+@use "themes/classic" as *;
+@use "../header/header.component" as *;
+
+main {
+    color: $main-color;
+    margin-top: header-height();
+  }

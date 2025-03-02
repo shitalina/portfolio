@@ -1,0 +1,25 @@
+@use "base" as *;
+@use "themes/classic" as *;
+
+h2 {
+    margin-bottom: $margin-size * 0.75;
+  }
+  h3 {
+    margin-bottom: $margin-size * 0.25;
+  }
+  h4 {
+    margin-bottom: $margin-size * 0.1;
+  }
+
+  li {
+    padding: $padding-size * 0.5;
+  }
+
+  .content-wrap {
+    margin: 0 $margin-size;
+    margin-bottom: $margin-size;
+    padding: $padding-size;
+    background-color: #ffffff;
+    opacity: 0.9;
+    border-radius: 0.25rem;
+  }

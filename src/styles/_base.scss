@@ -1,0 +1,104 @@
+$breakpoints: (
+    'sm': 'screen and (min-width: 576px)',
+    'md': 'screen and (min-width: 768px)',
+    'lg': 'screen and (min-width: 992px)',
+    'xl': 'screen and (min-width: 1200px)',
+) !default;
+
+@mixin media($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+$margin-size: 1rem;
+$padding-size: 1rem;
+$font-size: 1rem;
+$line-height: 1.5;
+$logo-size: 4rem;
+
+@function fontSize($base-size: $font-size, $num: 1) {
+  @return $base-size * $num;
+}
+
+@mixin heading_style($base-size: $font-size, $num: 1) {
+  font-weight: bold;
+  font-size: fontSize($base-size, $num);
+}
+
+$heading1-height: fontSize($font-size, 1.5);
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+  line-height: $line-height;
+}
+
+h1 {
+  @include heading_style($heading1-height, 1);
+}
+h2 {
+  @include heading_style($heading1-height, .95);
+}
+h3 {
+  @include heading_style($heading1-height, .9);
+}
+h4 {
+  @include heading_style($heading1-height, .8);
+}
+hr {
+  margin-bottom: $margin-size;
+}
+
+p {
+  font-size: fontSize();
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity 0.3s ease; 
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  letter-spacing: 0.05rem;
+
+  section,
+  article {
+
+    .content-wrap {
+      margin: 0 $margin-size;
+      margin-bottom: $margin-size;
+      padding: $padding-size;
+      background-color: #ffffff;
+      border-radius: .25rem;
+    }
+  }
+
+  article {
+    padding: $padding-size;
+  }
+}

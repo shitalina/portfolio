@@ -1,0 +1,27 @@
+$base-color: #fff5f8;
+$main-color: #5c3a42;
+$sub-color: #8c5e68;
+$accent-color: #ffd700;
+
+$font-family: "Playfair Display";
+$background-img: "/imgs/background-img.jpg";
+$link-color: #d63384;
+$visited-link-color: #831A4F;
+
+body {
+  background: url($background-img) no-repeat center center /cover fixed;
+  color: $main-color;
+  font-family: $font-family, serif; 
+}
+
+a {
+  color: $link-color;
+}
+
+a [href^="http"] {
+  color: $link-color;
+
+  &:visited {
+    color: $visited-link-color;
+  }  
+}
